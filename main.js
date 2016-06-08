@@ -11,40 +11,46 @@ potentialNumbers.sort(function(a, b){
   }
 });
 
-console.log(potentialNumbers)
-for(var i = 0; i < cards; i++){
+console.log(potentialNumbers)// shows array titled potentialNumbers
+
+for(var i = 0; i < cards; i++){ //for loop displays cards on screen
   var $cardNum = $('<div>').addClass("card").text(potentialNumbers[i]);
   $grid.append($cardNum);
 }
-var combos = (i / 2)-1;
-function random(){
-  var number = Math.round(Math.random()*(combos)+1);
-   return number;
-}
-var topHalf = [];
-var bottomHalf = [];
-function startUp(){
-  for(var s = 0; s <=combos; s++){
- if(topHalf.includes(random()) == false ){
-   topHalf[s] = random();
- }
+var cardText; // value undefined
+// console.log(cardText)
 
-  console.log(topHalf);
-//  console.log(bottomHalf);
-
-}
-}
-var cardText;
-console.log(cardText)
 $(".card").on("click",function card(){
   console.dir($(this).text())
-  if(cardText == null){
+  console.dir($(this));
+  if(cardText == null){ //if null then store this cards value
     cardText = $(this).text()
-  }else if(cardText == $(this).text()){
-    console.log("ITS A MATCH!!!!!!");
-    // console.log("cardText already has a value "+ cardText)
   }
-  // if (cardText) {
+  else if(cardText == $(this).text()){ // there is already a value in the cardText Var so compare the current one to the previous
+    console.dir($(this));
+    console.log("ITS A MATCH!!!!!!");
+      $(this).css("background-color","transparent");
+    cardText = null; // try to find a matching pair again
+
+
+  }else{
+    cardText = null; // try to find a matching pair again
+    console.log("Not a Match try again");
+  }
+
+
+
+
+var combos = (i / 2)-1; // gets possible combinations
+// function random(){
+//   var number = Math.round(Math.random()*(combos)+1);
+//    return number;
+// }
+//  console.log(bottomHalf);
+
+
+
+// if (cardText) {
   //
   // }var cardText = $(this).text();
   // if ($(".card").text == cardText){
