@@ -93,3 +93,6 @@ var combos = (i / 2)-1; // gets possible combinations
 // for(var k = 0; k < 1000; k++){
 // console.log("The value of random is: "+ random());
 // } Tester code to se value of random function, next to assign these values to cards to create matching pairs
+
+
+//OH YEAH!!!!!!!!!!!
