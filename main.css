@@ -1,12 +1,21 @@
-#organize{
-  width:175px;
-  height:;
+#grid{
+  width:500px;
 }
 .card{
   display: inline-block;
-  width:30px;
-  height:50px;
+  width:100px;
+  height:100px;
   background-color: red;
   margin:5px;
   border-radius: 3px;
+}
+.hidden{
+  background:transparent;
+}
+h1{
+  text-align: center;
+}
+#grid{
+  text-align: center;
+  margin:auto;
 }
