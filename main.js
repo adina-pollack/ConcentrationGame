@@ -31,8 +31,9 @@ var cardText; // value undefined, purpose is to store cardText.text()
 var whichCard; // value undefined, purpose is to store which card is clicked first and store it
 
 $(".card").on("click",function card(){
+  
   console.dir($(this).text())
-  console.dir($(this));
+  //console.dir($(this));
   if(cardText == null && whichCard == null){ //if null then store this cards value
     cardText = $(this).text()
     whichCard = $(this)
@@ -40,8 +41,8 @@ $(".card").on("click",function card(){
   else if(cardText == $(this).text()){ // there is already a value in the cardText Var so compare the current one to the previous
     console.dir($(this));
     console.log("ITS A MATCH!!!!!!");
-      $(this).css("background-color","transparent").css("color","transparent");
-      whichCard.css("background-color","transparent").css("color","transparent");
+    $(this).css("background-color","transparent").css("color","transparent");
+    whichCard.css("background-color","transparent").css("color","transparent");
     cardText = null; // try to find a matching pair again
     whichCard = null; // resets which card was clicked
 
