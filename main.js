@@ -1,7 +1,9 @@
-var cards = 12;
+var cards = window.location.hash.substr(1);
+// console.log(cards);
 var firstArray = [ ];
 var secondArray = [ ];
 var $grid = $("#grid")
+function Begin(){
 for (var i = 0; i < (cards/2); i++){
   firstArray[i] = i+1;
   secondArray[i] = i+1;
@@ -20,7 +22,7 @@ potentialNumbers.sort(function(a, b){
   }
 });
 
-console.log("and now the array has been sorted " +potentialNumbers)// shows array titled potentialNumbers
+console.log("and now the array has been sorted " + potentialNumbers)// shows array titled potentialNumbers
 
 for(var i = 0; i < cards; i++){ //for loop displays cards on screen
   var $cardNum = $('<div>').addClass("card").text(potentialNumbers[i]);
@@ -31,12 +33,11 @@ var cardText; // value undefined, purpose is to store cardText.text()
 var whichCard; // value undefined, purpose is to store which card is clicked first and store it
 
 $(".card").on("click",function card(){
-  
+  $(this).css("color","black")
   console.dir($(this).text())
-  //console.dir($(this));
   if(cardText == null && whichCard == null){ //if null then store this cards value
-    cardText = $(this).text()
-    whichCard = $(this)
+    cardText = $(this).text();
+    whichCard = $(this);
   }
   else if(cardText == $(this).text()){ // there is already a value in the cardText Var so compare the current one to the previous
     console.dir($(this));
@@ -46,54 +47,30 @@ $(".card").on("click",function card(){
     cardText = null; // try to find a matching pair again
     whichCard = null; // resets which card was clicked
 
-
-  }else{
+}else{
     cardText = null; // try to find a matching pair again
     console.log("Not a Match try again");
     whichCard = null; // resets which card was clicked
   }
 
+})
+}
+// ----------------The Start----------------------------------------------------------------------------
 
 
-
-var combos = (i / 2)-1; // gets possible combinations
-// function random(){
-//   var number = Math.round(Math.random()*(combos)+1);
-//    return number;
-// }
-//  console.log(bottomHalf);
-
-
-
-// if (cardText) {
-  //
-  // }var cardText = $(this).text();
-  // if ($(".card").text == cardText){
-
-  // console.log("I'm Blue");
- // console.log($(this).text());
-
-  // if(($(this).val())==1){
-  //   $(this).css("background-color","yellow");
-  // } Tester Code to check for values on different ".card divs"
+$("#yes").on("click",function(){
+  window.location.replace("levels.html")
+})
+$("#no").on("click", function(){
+  while(true){}
+  while(true){}
+  while(true){}
 })
 
 
+$("#level1").on("hover",function(){
 
-// console.log("The value of combos: " + combos); testing value of combos variable
-// console.log(i); Testing Value of i
-
-
-
-
-//for(/** do this for the amount of blocks you have*/){
-  //assigns each card a random value that does not repeat
-
-
-//}
-// for(var k = 0; k < 1000; k++){
-// console.log("The value of random is: "+ random());
-// } Tester code to se value of random function, next to assign these values to cards to create matching pairs
-
-
+})
 //OH YEAH!!!!!!!!!!!
+Begin();
+//use hash variables
