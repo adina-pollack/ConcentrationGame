@@ -33,6 +33,7 @@ var cardText; // value undefined, purpose is to store cardText.text()
 var whichCard; // value undefined, purpose is to store which card is clicked first and store it
 
 $(".card").on("click",function card(){
+  
   $(this).css("color","black")
   console.dir($(this).text())
   if(cardText == null && whichCard == null){ //if null then store this cards value
@@ -48,10 +49,14 @@ $(".card").on("click",function card(){
     whichCard = null; // resets which card was clicked
 
 }else{
+  $(this).css("color","transparent");
+  whichCard.css("color","transparent");
     cardText = null; // try to find a matching pair again
     console.log("Not a Match try again");
     whichCard = null; // resets which card was clicked
+    alert("Not a match")
   }
+
 
 })
 }
@@ -60,9 +65,12 @@ $("#yes").on("click",function(){
   window.location.replace("levels.html")
 })
 $("#no").on("click", function(){
-  while(true){}
-  while(true){}
-  while(true){}
+  var a = 10000000.123456;
+  while(true){
+    a = a*a;
+    prompt("Are you sure")
+    alert("Are you sure?")
+}
 })
 // ------------------------------------------------Levels Page-----------------------------------------------------
 
@@ -100,16 +108,5 @@ $("#level1").on("click",function(){
 
 
 // ----------------------------------------------Games Page-----------------------------------------------------
-var checkTimer = null;
-$(".card").on("click",function updateTime(){
-  var time = 0;
-  if(checkTimer == null){
-    var count = setInterval(function(){
-    time= time + 1;
-    checkTimer = 0;
-    console.log(time);
-    $("#timer").text(time + " s");
-  },1000)
-}
-})
+
 Begin();
