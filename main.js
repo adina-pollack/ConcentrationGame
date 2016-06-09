@@ -55,9 +55,7 @@ $(".card").on("click",function card(){
 
 })
 }
-// ----------------The Start----------------------------------------------------------------------------
-
-
+// ----------------The Start----Index.html------------------------------------------------------------------------
 $("#yes").on("click",function(){
   window.location.replace("levels.html")
 })
@@ -66,11 +64,52 @@ $("#no").on("click", function(){
   while(true){}
   while(true){}
 })
+// ------------------------------------------------Levels Page-----------------------------------------------------
 
-
-$("#level1").on("hover",function(){
-
+$("#level1").on("mouseover",function(){
+  $(this).text("Level 1").css("text-shadow","yellow 1px 0 10px");
 })
-//OH YEAH!!!!!!!!!!!
+$("#level1").on("mouseout",function(){
+    $(this).text("Something really quick").css("text-shadow","transparent 1px 0 10px");
+})
+$("#level2").on("mouseover",function(){
+  $(this).text("Level 2").css("text-shadow","yellow 1px 0 10px");
+})
+$("#level2").on("mouseout",function(){
+    $(this).text("I could spare a few minutes").css("text-shadow","transparent 1px 0 10px");
+})
+$("#level3").on("mouseover",function(){
+  $(this).text("Level 3").css("text-shadow","yellow 1px 0 10px");
+})
+$("#level3").on("mouseout",function(){
+    $(this).text("I got all day").css("text-shadow","transparent 1px 0 10px");
+})
+$("#level4").on("mouseover",function(){
+  $(this).text("Level 4").css("text-shadow","yellow 1px 0 10px");
+})
+$("#level4").on("mouseout",function(){
+    $(this).text("I got all year").css("text-shadow","transparent 0 0 0")
+})
+
+$("#level1").on("click",function(){
+  $("#grid").css("max-width","275px");
+})
+
+
+
+
+
+// ----------------------------------------------Games Page-----------------------------------------------------
+var checkTimer = null;
+$(".card").on("click",function updateTime(){
+  var time = 0;
+  if(checkTimer == null){
+    var count = setInterval(function(){
+    time= time + 1;
+    checkTimer = 0;
+    console.log(time);
+    $("#timer").text(time + " s");
+  },1000)
+}
+})
 Begin();
-//use hash variables
