@@ -13,6 +13,7 @@
 .hidden{
   background:transparent;
 }
+/*You can use body for the below headers*/
 h1,h3,h5{
   text-align: center;
 }
@@ -35,6 +36,7 @@ button{
   float:right;
 }
 
+/*Add these to #levels above*/
 #level1,#level2,#level3,#level4{
   display:block;
   font-size: 40px;

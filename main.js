@@ -25,6 +25,7 @@ potentialNumbers.sort(function(a, b){
 console.log("and now the array has been sorted " + potentialNumbers)// shows array titled potentialNumbers
 
 for(var i = 0; i < cards; i++){ //for loop displays cards on screen
+  //Do you need <> around the div below?
   var $cardNum = $('<div>').addClass("card").text(potentialNumbers[i]);
   $grid.append($cardNum);
 }
@@ -32,15 +33,25 @@ var cardText; // value undefined, purpose is to store cardText.text()
 // console.log(cardText)
 var whichCard; // value undefined, purpose is to store which card is clicked first and store it
 
+//fix indentation
+//Create smaller functions to eliminate the size of this overall function.
 $(".card").on("click",function card(){
-  
   $(this).css("color","black")
   console.dir($(this).text())
   if(cardText == null && whichCard == null){ //if null then store this cards value
     cardText = $(this).text();
     whichCard = $(this);
   }
+  //function matchMade(){
+    //console.dir($(this));
+    //console.log("ITS A MATCH!!!!!!");
+    //$(this).css("background-color","transparent").css("color","transparent");
+    //whichCard.css("background-color","transparent").css("color","transparent");
+    //cardText = null;
+    //whichCard = null;
+  //}
   else if(cardText == $(this).text()){ // there is already a value in the cardText Var so compare the current one to the previous
+    //matchMade();
     console.dir($(this));
     console.log("ITS A MATCH!!!!!!");
     $(this).css("background-color","transparent").css("color","transparent");
@@ -48,7 +59,16 @@ $(".card").on("click",function card(){
     cardText = null; // try to find a matching pair again
     whichCard = null; // resets which card was clicked
 
+// function noMatch{
+//   $(this).css("color","transparent");
+//   whichCard.css("color","transparent");
+//     cardText = null; // try to find a matching pair again
+//     console.log("Not a Match try again");
+//     whichCard = null; // resets which card was clicked
+//     alert("Not a match")
+// }
 }else{
+  //noMatch();
   $(this).css("color","transparent");
   whichCard.css("color","transparent");
     cardText = null; // try to find a matching pair again
@@ -73,7 +93,19 @@ $("#no").on("click", function(){
 }
 })
 // ------------------------------------------------Levels Page-----------------------------------------------------
-
+//You can make each level into functions. For example:
+//function levelOne(){
+  //$("#level1").on("mouseover",function(){
+    //$(this).text("Level 1").css("text-shadow","yellow 1px 0 10px");
+  //})
+  //$("#level1").on("mouseout",function(){
+  //    $(this).text("Something really quick").css("text-shadow","transparent 1px 0 10px");
+  //})
+  //$("#level1").on("click",function(){
+    //$("#grid").css("max-width","275px");
+  //})
+//}
+// levelOne();
 $("#level1").on("mouseover",function(){
   $(this).text("Level 1").css("text-shadow","yellow 1px 0 10px");
 })
